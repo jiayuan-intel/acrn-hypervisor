@@ -119,9 +119,11 @@ To set up the ACRN build environment on the development computer:
            xsltproc clang-format bc libpixman-1-dev libsdl2-dev libegl-dev \
            libgles-dev libdrm-dev gnu-efi libelf-dev liburing-dev \
            build-essential git-buildpackage devscripts dpkg-dev equivs lintian \
-           apt-utils pristine-tar dh-python acpica-tools
-      sudo pip3 install "elementpath==2.5.0" lxml "xmlschema==1.9.2" defusedxml tqdm  
-      
+           apt-utils pristine-tar dh-python acpica-tools python3-elementpath \
+           python3-lxml python3-xmlschema python3-defusedxml python3-tqdm
+      cd /tmp/
+      wget http://security.ubuntu.com/ubuntu/pool/main/w/webkit2gtk/libwebkit2gtk-4.0-37_2.44.2-0ubuntu0.22.04.1_amd64.deb http://mirrors.kernel.org/ubuntu/pool/main/i/icu/libicu70_70.1-2_amd64.deb http://security.ubuntu.com/ubuntu/pool/main/w/webkit2gtk/libjavascriptcoregtk-4.0-18_2.44.2-0ubuntu0.22.04.1_amd64.deb
+      sudo apt install ./libwebkit2gtk-4.0-37_2.44.2-0ubuntu0.22.04.1_amd64.deb ./libicu70_70.1-2_amd64.deb ./libjavascriptcoregtk-4.0-18_2.44.2-0ubuntu0.22.04.1_amd64.deb
 
 #. Get the ACRN hypervisor and ACRN kernel source code, and check out the
    current release branch.
