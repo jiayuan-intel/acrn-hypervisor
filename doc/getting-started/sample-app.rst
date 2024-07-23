@@ -117,7 +117,7 @@ As a normal (e.g., **acrn**) user, follow these steps:
 
      cd ~/acrn-work/acrn-hypervisor
      git fetch --all
-     git checkout release_3.2
+     git checkout release_3.3
 
 #. Build the ACRN sample application source code::
 
@@ -272,7 +272,7 @@ and generate new launch scripts for this sample application.
       :align: center
 
 #. Select the VM1 tab and change the VM name to HMI_VM. Configure the **Console
-   virtual UART type** to ``COM Port 1``, set the **Memory size** to ``2048``,
+   virtual UART type** to ``COM Port 1``, set the **Memory size** to ``4096``,
    and add the **physical CPU affinity** to pCPU ``0`` and ``1`` (click the
    **+** button to create the additional affinity setting), as shown below:
 
@@ -499,7 +499,7 @@ Install and Run ACRN on the Target System
 
       ubuntu login: root
       Password:
-      Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-52-generic x86_64)
+      Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.8.0-36-generic x86_64)
 
       . . .
 
