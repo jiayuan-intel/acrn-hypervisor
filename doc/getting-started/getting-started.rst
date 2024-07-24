@@ -567,7 +567,7 @@ Build ACRN
 
    The kernel build can take 15 minutes or less on a fast computer, but could
    take two hours or more depending on the performance of your development
-   computer. When done, the build generates four Debian packages in the
+   computer. When done, the build generates three Debian packages in the
    directory above the build root directory:
 
    .. code-block:: bash
@@ -576,7 +576,6 @@ Build ACRN
       ls *acrn-service-vm*.deb  
          linux-headers-6.1.80-acrn-service-vm_6.1.80-acrn-service-vm-1_amd64.deb
          linux-image-6.1.80-acrn-service-vm_6.1.80-acrn-service-vm-1_amd64.deb
-         linux-image-6.1.80-acrn-service-vm-dbg_6.1.80-acrn-service-vm-1_amd64.deb
          linux-libc-dev_6.1.80-acrn-service-vm-1_amd64.deb
 
 #. Use the ``scp`` command to copy files from your development computer to the
@@ -707,7 +706,7 @@ Launch the User VM
       sudo apt install qemu-utils guestfs-tools
       sudo virt-customize -a ./noble-server-cloudimg-amd64.img --run-command 'useradd -m -s /bin/bash acrn' --run-command 'echo "acrn:acrn" | chpasswd' --run-command 'systemctl disable systemd-networkd-wait-online.service'
       qemu-img convert -f qcow2 -O raw ./noble-server-cloudimg-amd64.img ./user-vm1.img
-      qemu-img -f raw ./user-vm1.img 16G
+      qemu-img resize -f raw ./user-vm1.img 16G
 
 #. Launch the User VM:
 
